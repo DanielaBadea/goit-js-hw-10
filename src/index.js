@@ -30,6 +30,7 @@ function onSelectBreed(event) {
     fetchCatByBreed(breedId)
     .then(data => {
         const { url, breeds } = data[0];
+        console.log(data);
         
         divCatInfo.innerHTML = `<div class="box-img">
         <img src="${url}" alt="${breeds[0].name}" width="500"/>
@@ -47,6 +48,7 @@ function onSelectBreed(event) {
 };
 
 function onFetchError(error) {
+
         error.style.display = 'block';
     Notify.failure('Oops! Something went wrong! Try reloading the page or select another cat breed!', {
         position: 'center-center',
